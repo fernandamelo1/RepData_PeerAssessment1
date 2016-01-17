@@ -12,7 +12,8 @@ This document presents the results from Project Assignment 1 in the Coursera cou
 
 In this document code will be represented to show how the results have been achieved. Set the default of echo to be true throughout the document:
 
-```{r}
+
+```r
 library(knitr)
 opts_chunk$set(echo = TRUE)
 
@@ -296,38 +297,10 @@ full_steps <- full_activity %>%
         print
 ```
         
-```r       
-## Source: local data frame [61 x 2]
-
-##         date    steps
-##        (time)    (dbl)
-## 1  2012-10-01 10766.19
-## 2  2012-10-02   126.00
-## 3  2012-10-03 11352.00
-## 4  2012-10-04 12116.00
-## 5  2012-10-05 13294.00
-## 6  2012-10-06 15420.00
-## 7  2012-10-07 11015.00
-## 8  2012-10-08 10766.19
-## 9  2012-10-09 12811.00
-## 10 2012-10-10  9900.00
-## ..        ...      ...       
-```       
+````       
   
 
-```r 
-## Open PNG device; create "plot3.png" in my working directory
-
-png(file = "plot3.png", width = 480, height = 480, units = "px")
-
-ggplot(full_steps, aes(x = steps)) +
-        geom_histogram(fill = "blue",color="red", binwidth = 1000) +
-        labs(title = "Histogram of Steps per day, including missing values", 
-        x = "Steps per day", y = "Frequency")
-
-
-dev.off() ## Close the PNG file device
-``` 
+``2`` 
   
 ![plot of chunk plot3](figure/plot3.png)         
 
