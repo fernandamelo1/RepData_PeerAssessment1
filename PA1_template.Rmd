@@ -30,7 +30,6 @@ library(ggplot2)
 The data is loaded using the ```read.csv()```.
 
 NOTE: It is assumed that you have already downloaded the activity.csv and saved it in your working directory. 
-If not, please download the code here, unzip it and save it to your working directory.
 
 ```r
 if(!file.exists('activity.csv')){
@@ -43,13 +42,13 @@ activity<- read.csv("activity.csv", header = TRUE, sep = ',', colClasses = c("nu
 
 ##### 2. Process/transform the data (if necessary) into a format suitable for your analysis
 
-Change the date into dateformat using ```{r}lubridate```:
+Change the date into dateformat using ```lubridate```:
 
 ```r
 activity$date <- ymd(activity$date)
 ```
 
-Check the data with ```{r}names()```,```{r}str()``` and ```{r}head()```:
+Check the data with ```names()```,```str()``` and ```head()```:
 
 ```r
 names(activity)
@@ -91,8 +90,11 @@ Now everything is ready and set up for solving some problems.
 ## What is mean total number of steps taken per day?
 
 For this part of the assignment, you can ignore the missing values in the dataset.
+
 1. Calculate the total number of steps taken per day
+
 2. Make a histogram of the total number of steps taken each day
+
 3. Calculate and report the mean and median of the total number of steps taken per day
 
 
@@ -143,7 +145,7 @@ dev.off() ## Close the PNG file device
 
 ![plot of chunk plot1](figure/plot1.png) 
 
-3.Calculate the mean and median of the total number of steps taken per day:
+3. Calculate the mean and median of the total number of steps taken per day:
 
 ```r
 mean_steps <- mean(steps$steps, na.rm = TRUE)
@@ -233,8 +235,11 @@ The interval 835 has, on average, the highest count of steps, with 206 steps.
 Note that there are a number of days/intervals where there are missing values (coded as ```NA```). The presence of missing days may introduce bias into some calculations or summaries of the data.
 
 1. Calculate and report the total number of missing values in the dataset (i.e. the total number of rows with NAs).
+
 2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
+
 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
+
 4. Make a histogram of the total number of steps taken each day and calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
 ###Methodology and Result
@@ -252,6 +257,7 @@ sum(is.na(activity$steps))
 Missing values are 2304.
 
 2. Let’s take the approach to fill in a missing ```NA``` with the average number of steps in the same 5-min interval.
+
 3. Create a new dataset as the original and use ```tapply``` for filling in the missing values with the average number of steps per 5-minute interval:
 
 
@@ -278,6 +284,7 @@ sum(is.na(full_activity$steps))
 No more missing values.
 
 4.Calculate the number of steps taken in each 5-minute interval per day using ```dplyr``` and group by ```interval```.
+
   Use ```ggplot2``` for making the histogram:
 
 
@@ -358,6 +365,7 @@ The impact of imputing missing data with the average number of steps in the same
 For this part the weekdays() will come handy. Use the dataset with the filled-in missing values for this part.
 
 1. Create a new factor variable in the dataset with two levels - “weekday” and “weekend” indicating whether a given date is a weekday or weekend day.
+
 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis).
 
 ###Methodology and Result
@@ -396,7 +404,7 @@ head(full_activity)
 ## 6 2.0943396 2012-10-01       25  Weekday
 ``` 
 
-2.Calculate the average steps in the 5-minute interval and use ```ggplot2``` for making the time series of the 5-minute interval for weekday and weekend, and compare the average steps:
+2. Calculate the average steps in the 5-minute interval and use ```ggplot2``` for making the time series of the 5-minute interval for weekday and weekend, and compare the average steps:
 
 
 ```r
