@@ -1,6 +1,6 @@
 
-#"Reproducible Research: Peer Assessment 1"
-
+#Reproducible Research: Peer Assessment 1
+Fernanda Melo
 
 #Introduction
 
@@ -8,7 +8,7 @@ This assignment makes use of data from a personal activity monitoring device. Th
 
 This document presents the results from Project Assignment 1 in the Coursera course Reproducible Research, written in a single R markdown document that can be processed by knitr and transformed into an HTML file
 
-#R preparations
+##R preparations
 
 In this document code will be represented to show how the results have been achieved. Set the default of echo to be true throughout the document:
 
@@ -138,6 +138,13 @@ steps <- activity%>%
 
 
 2.Use ```ggplot2``` for making the histogram:
+
+
+```r
+ggplot(steps, aes(x = steps)) +
+        geom_histogram(fill = "blue",color="red", binwidth = 1000) +
+        labs(title = "Histogram of Steps per day", x = "Steps per day", y = "Frequency")
+```
 
 ![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png)
 
