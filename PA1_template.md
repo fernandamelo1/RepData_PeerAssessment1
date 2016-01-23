@@ -316,7 +316,7 @@ full_steps <- full_activity %>%
 ## ..        ...      ...       
 ```
   
-```
+```r
 ## Open PNG device; create "plot3.png" in my working directory
 
 png(file = "plot3.png", width = 480, height = 480, units = "px")
