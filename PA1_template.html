@@ -449,7 +449,7 @@ full_activity$steps[nas] &lt;- avg_interval[as.character(full_activity$interval[
 
 <p>No more missing values.</p>
 
-<p>4.Calculate the number of steps taken in each 5-minute interval per day using <code>dplyr</code> and group by <code>interval</code>.</p>
+<p>4.Calculate the number of steps taken in each 5-minute interval per day using <code>dplyr</code> and group by <code>date</code>.</p>
 
 <p>Use <code>ggplot2</code> for making the histogram:</p>
 
@@ -460,7 +460,7 @@ full_activity$steps[nas] &lt;- avg_interval[as.character(full_activity$interval[
         print
 </code></pre>
 
-<pre><code>## Source: local data frame [61 x 2]
+<pre><code class="r">## Source: local data frame [61 x 2]
 
 ##         date    steps
 ##        (time)    (dbl)

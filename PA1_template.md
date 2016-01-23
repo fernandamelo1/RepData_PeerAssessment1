@@ -284,7 +284,7 @@ sum(is.na(full_activity$steps))
 
 No more missing values.
 
-4.Calculate the number of steps taken in each 5-minute interval per day using ```dplyr``` and group by ```interval```.
+4.Calculate the number of steps taken in each 5-minute interval per day using ```dplyr``` and group by ```date```.
 
   Use ```ggplot2``` for making the histogram:
 
@@ -296,7 +296,9 @@ full_steps <- full_activity %>%
         summarize(steps = sum(steps)) %>%
         print
 ```
-```      
+
+
+```r
 ## Source: local data frame [61 x 2]
 
 ##         date    steps
@@ -312,7 +314,8 @@ full_steps <- full_activity %>%
 ## 9  2012-10-09 12811.00
 ## 10 2012-10-10  9900.00
 ## ..        ...      ...       
-```   
+```
+  
 ```
 ## Open PNG device; create "plot3.png" in my working directory
 
